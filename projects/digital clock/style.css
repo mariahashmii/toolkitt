@@ -16,61 +16,58 @@
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 800px;
-  height: auto;
   position: relative;
+  padding: 20px;
 }
 
 .clock {
   width: 100%;
-  padding: 30px 20px;
   background: rgba(136, 47, 88, 0.596);
   border-radius: 10px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(40px);
-  flex-wrap: wrap;
+  padding: 30px 20px;
+  gap: 20px;
 }
 
-.container::before {
+.container::before,
+.container::after {
   content: '';
   width: 140px;
   height: 140px;
   background: #dab2c2;
   position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.container::before {
   left: -40px;
   top: -40px;
-  z-index: -1;
-  border-radius: 50%;
+  background: #dab2c2;
 }
 
 .container::after {
-  content: '';
-  width: 140px;
-  height: 140px;
-  background: #55152f;
-  position: absolute;
-  border-radius: 50%;
   right: -20px;
   bottom: -40px;
-  z-index: -1;
+  background: #55152f;
 }
 
 .clock span {
-  font-size: 10vw;
-  max-width: 110px;
-  flex: 1 1 30%;
+  font-size: clamp(36px, 8vw, 80px);
+  width: 90px;
   text-align: center;
   color: white;
   position: relative;
-  min-width: 80px;
 }
 
 .clock span::after {
-  font-size: 3vw;
-  min-font-size: 12px;
+  font-size: clamp(10px, 3vw, 16px);
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -90,25 +87,20 @@
   content: 'SEC';
 }
 
-/* 📱 Responsive tweaks for smaller screens */
-@media (max-width: 768px) {
+/* 📱 Responsive Fixes */
+@media (max-width: 600px) {
   .clock {
-    padding: 25px 15px;
-    gap: 10px;
-  }
-
-  .clock span {
-    font-size: 14vw;
-    flex: 1 1 100%;
-    margin-bottom: 15px;
-  }
-
-  .clock span::after {
-    font-size: 4vw;
+    flex-direction: row;
+    gap: 15px;
+    padding: 20px 10px;
   }
 
   .container::before,
   .container::after {
     display: none;
+  }
+
+  .clock span {
+    width: 70px;
   }
 }
