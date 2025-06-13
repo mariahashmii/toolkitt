@@ -76,7 +76,7 @@ body {
 .clock span::after {
   content: "💖";
   position: absolute;
-  font-size: 16px;
+  font-size: 10px;
   top: -15px;
   right: -10px;
   animation: sparkle 2s infinite;
