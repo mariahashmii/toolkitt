@@ -6,8 +6,8 @@
 }
 
 body {
-  background: linear-gradient(135deg, #fddde6, #fcb6c2);
-  color: white;
+  background: linear-gradient(135deg, #f7dee5, #f089aa);
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,12 +50,12 @@ body {
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.547);
   backdrop-filter: blur(20px);
   padding: 20px 25px;
   border-radius: 25px;
-  box-shadow: 0 8px 25px rgba(255, 100, 150, 0.2);
-  border: 2px solid #ffffff44;
+  box-shadow: 0 8px 25px rgba(255, 100, 149, 0.286);
+  border: 2px solid #ffffff83;
   flex-wrap: nowrap;
   transition: transform 0.3s;
 }
