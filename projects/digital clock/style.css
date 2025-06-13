@@ -1,81 +1,57 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #d49cc3, #a32f5d);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .hero {
   width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(45deg, #d49cc3, #a32f5d);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
 }
 
 .container {
-  width: 100%;
-  max-width: 800px;
-  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
 }
 
 .clock {
-  width: 100%;
-  background: rgba(136, 47, 88, 0.6);
-  border-radius: 10px;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  backdrop-filter: blur(40px);
-  padding: 20px;
+  align-items: flex-end;
   gap: 10px;
+  background: rgba(136, 47, 88, 0.6);
+  backdrop-filter: blur(30px);
+  padding: 20px;
+  border-radius: 12px;
   flex-wrap: nowrap;
 }
 
-.time-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.clock span {
+  font-size: clamp(28px, 6vw, 60px);
+  min-width: 40px;
+  text-align: center;
 }
 
-.time-block span.value {
-  font-size: clamp(24px, 6vw, 60px);
-  color: white;
-}
-
-.time-block span.label {
-  font-size: clamp(10px, 3vw, 14px);
-  color: white;
-  margin-top: 4px;
-}
-
-.colon {
-  font-size: clamp(24px, 6vw, 40px);
-  color: white;
-  padding: 0 5px;
-}
-
-/* Responsive fix */
+/* Responsive tweaks for small phones */
 @media (max-width: 480px) {
   .clock {
-    padding: 15px 10px;
-    gap: 5px;
+    padding: 15px;
+    gap: 6px;
   }
 
-  .time-block span.value {
+  .clock span {
     font-size: 32px;
-  }
-
-  .time-block span.label {
-    font-size: 10px;
-  }
-
-  .colon {
-    font-size: 28px;
-    padding: 0 3px;
+    min-width: 30px;
   }
 }
