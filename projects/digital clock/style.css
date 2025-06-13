@@ -32,7 +32,7 @@
   justify-content: center;
   backdrop-filter: blur(40px);
   padding: 30px 20px;
-  gap: 30px;
+  gap: 20px;
 }
 
 .container::before,
@@ -60,20 +60,19 @@
 
 .clock span {
   font-size: clamp(36px, 8vw, 80px);
-  width: clamp(60px, 25vw, 90px);
+  width: 90px;
   text-align: center;
   color: white;
   position: relative;
 }
 
 .clock span::after {
-  font-size: clamp(12px, 2.5vw, 18px);
+  font-size: clamp(10px, 3vw, 16px);
   position: absolute;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  color: #fdd8f8;
 }
 
 #hrs::after {
@@ -87,21 +86,22 @@
 }
 
 /* ✅ Mobile optimization */
-@media (max-width: 600px) {
-  .container {
-    padding: 10px;
-  }
-
+@media (max-width: 480px) {
   .clock {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     padding: 20px 10px;
   }
 
   .clock span {
-    width: 80px;
+    width: 70px;
+    font-size: clamp(30px, 7vw, 60px);
   }
+
+  .clock span::after {
+    font-size: clamp(10px, 3vw, 14px);
+    bottom: -8px;
+  }
+}
 
   .container::before,
   .container::after {
